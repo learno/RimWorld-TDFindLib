@@ -471,7 +471,7 @@ namespace TD_Find_Lib
 
 		public override bool AppliesDirectlyTo(Thing thing) =>
 			thing is Pawn pawn &&
-			(!pawn.RaceProps.Animal || pawn.Faction != null || DebugSettings.godMode) &&
+			(pawn.RaceProps.Animal || pawn.Faction != null || DebugSettings.godMode) &&
 				pawn.needs?.TryGetNeed(sel) is Need need && needRange.Includes(need.CurLevelPercentage);
 
 		public override bool DrawCustom(Rect fullRect)
